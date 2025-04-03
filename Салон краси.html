@@ -1,0 +1,160 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис в салон краси</title>
+    <style>
+        body {
+            background-color: violet;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотослайдер</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .slider-container {
+            position: relative;
+            max-width: 500px;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Фотослайдер</h2>
+    <div class="slider-container">
+        <button class="btn" onclick="changeImage(-1)">&#10094; Попереднє</button>
+        <img id="slide" src="image1.jpg" alt="Слайд">
+        <button class="btn" onclick="changeImage(1)">Наступне &#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        let images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            if (currentIndex >= images.length) currentIndex = 0;
+            document.getElementById("slide").src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
+    <h2>Запис на процедуру</h2>
+    <label>Ім'я: <input type="text" id="name"></label><br>
+    <label>Дата: <input type="date" id="date"></label><br>
+    <button onclick="confirmBooking()">Записатися</button>
+    <p id="result"></p>
+<label>Стать:
+        <select id="gender">
+            <option value="Чоловік">Чоловік</option>
+            <option value="Жінка">Жінка</option>
+            <option value="Інше">Інше</option>
+        </select>
+    </label><br>
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById('name').value;
+            let date = document.getElementById('date').value;
+            if (name && date) {
+                document.getElementById('result').textContent = name + ", ви записані на " + date + "!";
+            } else {
+                alert("Будь ласка, заповніть всі поля.");
+            }
+        }
+    </script>
+</body>
+</html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета клієнта</title>
+    <style>
+        body {
+            background-color: violet;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Анкета для клієнтів салону</h2>
+    <form>
+        <label><input type="checkbox" name="service" value="haircut"> Стрижка</label><br>
+        <label><input type="checkbox" name="service" value="nails"> Манікюр</label><br>
+        <label><input type="checkbox" name="service" value="spa"> СПА-процедури</label><br>
+        <button type="button" onclick="calculatePrice()">Розрахувати вартість</button>
+    </form>
+    <p id="price"></p>
+
+    <script>
+        function calculatePrice() {
+            let services = document.querySelectorAll('input[name="service"]:checked');
+            let price = services.length * 500;
+            document.getElementById('price').textContent = "Орієнтовна вартість: " + price + " грн";
+        }
+    </script>
+</body>
+</html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація в програму лояльності</title>
+    <style>
+        body {
+            background-color: violet;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Реєстрація в програму лояльності</h2>
+    <form>
+        <label>Ім'я: <input type="text" required></label><br>
+        <label>Email: <input type="email" required></label><br>
+        <label>Номер телефону: <input type="tel" required></label><br>
+        <button type="submit">Зареєструватися</button>
+    </form>
+</body>
+</html>
